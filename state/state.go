@@ -1,4 +1,4 @@
-package main
+package state
 
 import (
 	"fmt"
@@ -43,13 +43,4 @@ func (s openState) insertCoin() {
 func (s openState) push() {
 	fmt.Println("Opening turnstile")
 	turnstileState = lockState{}
-}
-
-func main() {
-	InsertCoin()
-	InsertCoin()
-	Push()
-	Push()
-	InsertCoin()
-	Push()
 }
