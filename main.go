@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/mvelusce/go-design-patterns/state"
 	"github.com/mvelusce/go-design-patterns/singleton"
+	"github.com/mvelusce/go-design-patterns/state"
 )
 
 func main() {
