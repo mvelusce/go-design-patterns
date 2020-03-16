@@ -5,6 +5,7 @@ import (
 	"github.com/mvelusce/go-design-patterns/launch-system/rocket"
 	"time"*/
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func main() {
@@ -31,12 +32,14 @@ func main() {
 }
 
 func setupRouter() *gin.Engine {
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
+	router := gin.Default()
+	router.LoadHTMLGlob("templates/*")
+	//router.LoadHTMLFiles("templates/template1.html", "templates/template2.html")
+	router.GET("/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			"title": "Main website",
 		})
 	})
-	//r.Run() // listen and serve on 0.0.0.0:8080
-	return r
+	//router.Run() // listen and serve on 0.0.0.0:8080
+	return router
 }
