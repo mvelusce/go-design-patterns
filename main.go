@@ -25,4 +25,6 @@ func main() {
 	config.SetProperty("p1", "my value")
 
 	fmt.Println(config1.GetProperty("p1"))
+
+	runChain()
 }
